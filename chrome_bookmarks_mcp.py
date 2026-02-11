@@ -7,7 +7,6 @@ import argparse
 import json
 import os
 from pathlib import Path
-
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("Chrome Bookmarks")
@@ -16,12 +15,12 @@ mcp = FastMCP("Chrome Bookmarks")
 def find_chrome_bookmarks():
     """查找Chrome书签文件路径"""
     home = Path.home()
-
+    paths = []
     # 根据不同系统查找路径
     if os.name == "nt":  # Windows
         paths = [home / "AppData/Local/Google/Chrome/User Data/Default/Bookmarks"]
     elif os.name == "posix":  # macOS/Linux
-        if os.uname().sysname == "Darwin":  # macOS
+        if os.name == "Darwin":  # macOS
             paths = [
                 home / "Library/Application Support/Google/Chrome/Default/Bookmarks"
             ]
