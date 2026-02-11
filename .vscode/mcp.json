@@ -1,0 +1,14 @@
+{
+	"servers": {
+		"my-mcp-server-chromebook": {
+			"type": "stdio",
+			"command": "uv",
+			"args": [
+				"run",
+				"chrome_bookmarks_mcp.py",
+				"--serve"
+			]
+		}
+	},
+	"inputs": []
+}
